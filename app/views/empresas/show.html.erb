@@ -55,6 +55,11 @@
   <%= @empresa.site %>
 </p>
 
+<% if !@empresa.validada? %>
+	<%= link_to "Validar", controller: "empresas", action: "validar" %>
+<% else %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_empresa_path(@empresa) %> |
 <%= link_to 'Back', empresas_path %>

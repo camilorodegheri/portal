@@ -1,6 +1,14 @@
 class EmpresasController < ApplicationController
   # GET /empresas
   # GET /empresas.json
+
+  def validar
+    empresa = Empresa.find(params["id"])
+    empresa.validada = true
+    empresa.save!
+    redirect_to empresas_url
+  end
+
   def index
     @empresas = Empresa.all
 
